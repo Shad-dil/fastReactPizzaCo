@@ -28,6 +28,7 @@ function App() {
         {
           path: "/cart",
           element: <Cart />,
+          errorElement:<Error/>
         },
         {
           path: "/order/new",

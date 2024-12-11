@@ -50,16 +50,14 @@ function CreateOrder() {
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required
-          className="rounded-full border border-slate-300 transition-all text-sm duration-300
-               px-4 py-2 focus:outline-none focus:ring focus:ring-slate-200 w-full" />
+          className="input" />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
             <input type="tel" name="phone" required
-              className="rounded-full border border-slate-300 transition-all text-sm duration-300
-               px-4 py-2 focus:outline-none focus:ring focus:ring-slate-200 w-full"/>
+              className="input"/>
           </div>
           {formErrors?.phone && (
             <span className="text-sm text-red-700  ">{formErrors?.phone}</span>
@@ -70,8 +68,7 @@ function CreateOrder() {
           <label>Address</label>
           <div>
             <input type="text" name="address" required
-              className="rounded-full border border-slate-300 transition-all text-sm duration-300
-               px-4 py-2 focus:outline-none focus:ring focus:ring-slate-200 w-full" />
+              className="input" />
           </div>
         </div>
 

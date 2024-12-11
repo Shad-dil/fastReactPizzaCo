@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
 function CreateUser() {
@@ -16,12 +17,17 @@ function CreateUser() {
         placeholder="Your full name"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className='w-72 '
+        className='w-72 input mb-6'
       />
 
       {username !== '' && (
         <div>
-          <button>Start ordering</button>
+          <Button variant="default" type="submit" 
+            className="bg-slate-600 hover:bg-slate-700 transition-all uppercase tracking-wide 
+            rounded-full focus:outline-none focus:ring focus:ring-teal-500
+             focus:ring-offset-2 disabled:cursor-not-allowed sm:px-6 sm:py-4">
+           Start ordering
+          </Button>
         </div>
       )}
     </form>
