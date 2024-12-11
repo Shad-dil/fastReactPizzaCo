@@ -44,7 +44,7 @@ function Cart() {
         <Button className="bg-slate-600 hover:bg-slate-700 transition-all uppercase tracking-wide 
             rounded-full focus:outline-none focus:ring focus:ring-teal-500
             focus:ring-offset-2 disabled:cursor-not-allowed" onClick={()=>navigate("/order/new")}>Order Pizzas</Button>
-        <Button variant="destructive" className="transition-all uppercase tracking-wide 
+        <Button variant="outline" className="transition-all uppercase tracking-wide 
             rounded-full mx-3">Clear cart</Button>
       </div>
     </div>

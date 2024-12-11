@@ -43,36 +43,37 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>Ready to order? lets go!</h2>
+    <div className="px-4 py-6">
+      <h2 className="text-xl font-semibold mb-8">Ready to order? lets go!</h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40">First Name</label>
           <input type="text" name="customer" required
-          className="input" />
+          className="input grow" />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40" >Phone number</label>
+          <div className="grow">
             <input type="tel" name="phone" required
-              className="input"/>
-          </div>
-          {formErrors?.phone && (
-            <span className="text-sm text-red-700  ">{formErrors?.phone}</span>
+              className="input w-full" />
+            {formErrors?.phone && (
+            <span className="text-xs text-red-700  p-2 rounded-md mt-10 ">{formErrors?.phone}</span>
           )}
+          </div>
+          
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
             <input type="text" name="address" required
-              className="input" />
+              className="input w-full" />
           </div>
         </div>
 
-        <div className="flex items-center justify-start gap-2">
+        <div className="flex items-center  gap-5 mb-12">
           <input
             type="checkbox"
             name="priority"
@@ -81,7 +82,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
             className=" h-6 w-6 accent-teal-500"
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority" className="text-sm">Want to yo give your order priority?</label>
         </div>
 
         <div>
