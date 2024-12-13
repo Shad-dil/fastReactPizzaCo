@@ -6,8 +6,9 @@ const isValidPhone = (str) =>
 
 import { Button } from "@/components/ui/button";
 import { createOrder } from "@/services/apiRestaurant";
-import { Loader } from "lucide-react";
+import { LoaderPinwheel } from "lucide-react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 
 const fakeCart = [
@@ -35,6 +36,7 @@ const fakeCart = [
 ];
 
 function CreateOrder() {
+   const username=useSelector(state=>state.user.username)
   const [withPriority, setWithPriority] = useState(false);
   const formErrors = useActionData();
   const navigation = useNavigation();
@@ -50,7 +52,7 @@ function CreateOrder() {
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
           <label className="sm:basis-40">First Name</label>
           <input type="text" name="customer" required
-          className="input grow" />
+          className="input grow" defaultValue={username} />
         </div>
 
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
@@ -90,7 +92,7 @@ function CreateOrder() {
           <Button variant="default" type="submit" disabled={isSubmitting}
             className="bg-slate-600 hover:bg-slate-700 transition-all uppercase tracking-wide 
             rounded-full focus:outline-none focus:ring focus:ring-teal-500 focus:ring-offset-2 disabled:cursor-not-allowed">
-            {isSubmitting && <Loader className="h-4 w-4 animate-spin" />}
+            {isSubmitting && <LoaderPinwheel className="h-4 w-4 animate-spin" />}
             Order Now
           </Button>
         </div>

@@ -8,10 +8,10 @@ const Header = () => {
       <Link href="/" className="uppercase tracking-wider text-slate-900">
         FAST REACT PIZZA CO..
       </Link>
-      <div >
+      <div className="">
         <Searchorder />
-        <Username />
       </div>
+        <Username />
     </header>
   );
 };

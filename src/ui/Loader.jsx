@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Loader = () => {
-  const skeletonRow = [1, 2, 3, 4, 5];
+  const skeletonRow = [1, 2, 3, 4,];
   return (
     <div className="space-y-6">
       {skeletonRow.map(() => {
