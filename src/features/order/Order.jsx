@@ -1,7 +1,8 @@
 // Test ID: IIDSAT
 
 import { getOrder } from "@/services/apiRestaurant";
-import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { useFetcher, useLoaderData } from "react-router-dom";
 import {
   calcMinutesLeft,
   formatCurrency,
@@ -11,6 +12,15 @@ import OrderItem from "./OrderItem";
 
 function Order() {
   const order = useLoaderData();
+
+  const fetcher = useFetcher();
+  useEffect(() => {
+    if (!fetcher.data && fetcher.state=== "idle"){
+    
+      fetcher.load("/menu")
+    }
+  },[fetcher])
+
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -45,7 +55,7 @@ function Order() {
 
       <ul className="divide-y divide-stone-200 borde-b border-t">
 
-      {cart.map((item) => <OrderItem item={item} key={item.id}/>)}
+        {cart.map((item) => <OrderItem item={item} key={item.id}  />)}
       </ul>
 
       <div className="space-y-2 bg-stone-200 px-6 py-5">
