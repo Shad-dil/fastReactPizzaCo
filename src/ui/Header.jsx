@@ -1,5 +1,5 @@
 import Searchorder from "@/features/order/Searchorder";
-import Username from "@/features/user/username";
+import Username from "@/features/user/Username";
 import { Link } from "react-router-dom";
 
 const Header = () => {
